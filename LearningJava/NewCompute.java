@@ -13,6 +13,8 @@ public class NewCompute {
 	 int j = 2;
 	 System.out.println(i*Math.pow(j, 2));
      //System.out.println("25/4 = " + 25/4);
+	 double x = 1 -0.1-0.1-0.1-0.1-0.1;
+	 ifs(x); 
 	   
   }  
 	  
@@ -34,5 +36,11 @@ public class NewCompute {
 		  input.close();		  
 		  
 	  }
+  public static void ifs(double x){
+	  final double EPSILON = 1E-14;	  
+	  if (Math.abs(x-0.5)<EPSILON)
+		  System.out.println(x + " is aproximately 0.5");
+	  
+  }
   
 }
