@@ -1,11 +1,11 @@
 
-public class SmallPizza extends Pizza{
+public class SqrPizza extends Pizza{
 	
-	public static void main(String Args[]){}
+    public static void main(String Args[]){}
 	
-	public SmallPizza(){
+    public SqrPizza(){
 		this.diameter = 12;
-		this.shape="round";
+		this.shape="square";
 	}
 	
     private  String pizzaOwner;
@@ -23,7 +23,7 @@ public class SmallPizza extends Pizza{
 	}
 	public  double pizzaSize(){
 		double Size; 
-		Size = Math.PI*Math.pow(diameter,2)/4;		
+		Size = diameter*diameter;		
 		return Size; 
 	 }
 }
