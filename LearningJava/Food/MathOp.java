@@ -1,3 +1,4 @@
+package Food;
 import java.util.Scanner;
 
 
