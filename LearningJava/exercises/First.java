@@ -1,10 +1,11 @@
-package Food;
+package exercises;
 public class First{
    public static void main(String[] args){
-	text();
-	numbs();
-	census(5);
-	average(24,1,40,35);
+//	text();
+//	numbs();
+//	census(5);
+//	average(24,1,40,35);	
+	System.out.println(randomChar());
    }
 
    private static void text(){
@@ -52,6 +53,10 @@ public class First{
 	 double km = (1.6*miles)/(hour+minutes/60+seconds/3600);  
 	 System.out.println(km+" kmh");  
 	   
-   }   
+   }
+   private static char randomChar() {	   
+	   return (char)('a' + Math.random() * ('z' - 'a' + 1));
+	   
+   }
    
 }

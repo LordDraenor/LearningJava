@@ -14,7 +14,7 @@ public class App {
 	    } catch (Exception e) {
 			System.out.println("E ok man");
 		}
-	    Pizza bestPizza = wierdPizza.ComparePizzas(miniPizza, wierdPizza);
+	    Pizza bestPizza = SqrPizza.ComparePizzas(miniPizza, wierdPizza);
 	    System.out.println("The bigger pizza is " + bestPizza.shape + " and has an area of " + bestPizza.pizzaSize() );
 	
 	    //System.out.println("The sum of all ingredients is: " + (Salami.Cost()+Corn.Cost()+Tomatoes.Cost()));
