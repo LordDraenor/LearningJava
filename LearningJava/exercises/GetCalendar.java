@@ -25,13 +25,15 @@ public class GetCalendar {
     	System.out.println("-----------------------------------");
     	System.out.println(" Mon  Tue  Wed  Thu  Fri  Sat  Sun");
     	boolean isStart; 
-    	for (int i = 1; i < getNumberOfDaysInMonth(year, month); i++) {
+    	int totalChars = getNumberOfDaysInMonth(year, month);
+    	for (int i = 1; i < totalChars; i++) {
     		int getStart = getStartDay(year,month);
     		isStart = (i == getStart);    		
     		String toPrint,placeholder,space;  
     		
     		placeholder = (i>getStart)?"  "+(i-getStart+1)+(space=(i>10)?" ":"  "):"     ";
-    		
+    		if (placeholder.equals("     "))
+    			totalChars++;
 			System.out.print(toPrint = isStart ? "  1  " : placeholder);
 			
 			if(i%7==0)
