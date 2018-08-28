@@ -5,15 +5,13 @@ import java.util.Scanner;
 public class GetCalendar {
 	final static int START_DAY_JANUARY_1_1800 = 3;
     public static void main(String[] args) {
-//    	Scanner input = new Scanner(System.in);
-//    	System.out.println("Input year (eg. 2012):");
-//    	int year = input.nextInt(); 
-//    	System.out.println("Input month (eg. 11):");
-//    	int month = input.nextInt();
-    	
-    	//printMonth(year,month);
-    	printMonth(1802,6);
-    	printMonthBody(1802, 6);
+    	Scanner input = new Scanner(System.in);
+    	System.out.println("Input year (eg. 2012):");
+    	int year = input.nextInt(); 
+    	System.out.println("Input month (eg. 11):");
+    	int month = input.nextInt();    	
+ 
+    	printMonthBody(year, month);
     }
     
 	public static void printMonth(int year,int month) {
@@ -30,9 +28,12 @@ public class GetCalendar {
     	for (int i = 1; i < getNumberOfDaysInMonth(year, month); i++) {
     		int getStart = getStartDay(year,month);
     		isStart = (i == getStart);    		
-    		String toPrint,placeholder,space;    		
-    		placeholder = (i>getStart)?"  "+(i-getStart)+(space=(i>9)?" ":"  "):"     ";
-			System.out.print(toPrint = isStart ? "  1  " : placeholder);			
+    		String toPrint,placeholder,space;  
+    		
+    		placeholder = (i>getStart)?"  "+(i-getStart+1)+(space=(i>10)?" ":"  "):"     ";
+    		
+			System.out.print(toPrint = isStart ? "  1  " : placeholder);
+			
 			if(i%7==0)
 				System.out.println();
 		}
@@ -77,7 +78,7 @@ public class GetCalendar {
 		}
     	
     }
-    public static Boolean isLeapYear(int year) {
+    public static boolean isLeapYear(int year) {
     	return year%400==0||(year%4==0&&year%100!=0);
     }
 }
