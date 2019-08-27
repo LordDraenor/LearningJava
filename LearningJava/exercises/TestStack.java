@@ -55,15 +55,23 @@ class Stack {
 	
 }
 public class TestStack {
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
+//	Stack stack = new Stack();	
+//	stack.push(1);
+//	stack.push(2);
+//	System.out.println(stack.peek());
+//	stack.pop();
+//	System.out.println(stack.peek());
+//	stack.cheat();
+	
+//	int x = new Integer(3) + new Integer(4);
+	String[] x = "Java;Is'Fun#To~Learn".split("[~#']");
+	for (int i = 0; i < x.length; i++) {
+		System.out.println(x[i]);
+	}
+	System.out.println("Java~Is#Fun:To'Learn".replaceAll("[~#:]", "????"));
 		
-	Stack stack = new Stack();	
-	stack.push(1);
-	stack.push(2);
-	System.out.println(stack.peek());
-	stack.pop();
-	System.out.println(stack.peek());
-	stack.cheat();
+		
 	}
 }
 
