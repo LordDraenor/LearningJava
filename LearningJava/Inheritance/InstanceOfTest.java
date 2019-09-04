@@ -16,11 +16,12 @@ public class InstanceOfTest {
 		
 		//Check a bit of inheritance rules - subclasses are always instances of superclass's
 		CircleFromSimpleGeometricObjectType1 circle = new CircleFromSimpleGeometricObjectType1(1);
-		SimpleGeometricObjectType1 object = new SimpleGeometricObjectType1();
+		SimpleGeometricObjectType1 object =  new SimpleGeometricObjectType1();
+		
 		System.out.println((circle instanceof SimpleGeometricObjectType1));
 		System.out.println((object instanceof SimpleGeometricObjectType1));
 		System.out.println((circle instanceof CircleFromSimpleGeometricObjectType1));
-		System.out.println((object instanceof CircleFromSimpleGeometricObjectType1));
+		System.out.println((object instanceof CircleFromSimpleGeometricObjectType1));		
 		
 	}
 

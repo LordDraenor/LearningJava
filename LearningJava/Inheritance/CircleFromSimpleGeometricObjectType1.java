@@ -40,6 +40,14 @@ public class CircleFromSimpleGeometricObjectType1 extends SimpleGeometricObjectT
 	public void printCircle() {
 	  System.out.println("The circle is created " + getDateCreated() + " and the radius is " + radius);
 	}
+	//This overrides, the other one does not - remember that the signature needs to be the same to override or else we're just overloading
+	public boolean equals(Object circle) {
+		return this.radius == ((CircleFromSimpleGeometricObjectType1)circle).radius;
+		}
+	
+	public boolean equals(CircleFromSimpleGeometricObjectType1 circle) {
+		return this.radius == circle.radius;
+		}
 }
 
 
