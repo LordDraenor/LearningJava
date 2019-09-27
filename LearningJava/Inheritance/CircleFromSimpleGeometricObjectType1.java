@@ -1,17 +1,19 @@
 package Inheritance;
+import exercises.InvalidRadiusException;
 
-public class CircleFromSimpleGeometricObjectType1 extends SimpleGeometricObjectType1 {
+public class CircleFromSimpleGeometricObjectType1 extends SimpleGeometricObjectType1{
 	private double radius;
 	
-	public CircleFromSimpleGeometricObjectType1() {		
+	public CircleFromSimpleGeometricObjectType1() throws InvalidRadiusException{		
+		this(1.0);
 	}
 	
-	public CircleFromSimpleGeometricObjectType1(double radius) {
-		this.radius = radius;
+	public CircleFromSimpleGeometricObjectType1(double radius) throws InvalidRadiusException{		
+		setRadius(radius);
 	}
 	
-	public CircleFromSimpleGeometricObjectType1(double radius, boolean filled, String color) {
-		this.radius = radius;
+	public CircleFromSimpleGeometricObjectType1(double radius, boolean filled, String color) throws InvalidRadiusException{
+		setRadius(radius);
 		setFilled(filled);
 		setColor(color);
 	}
@@ -20,8 +22,10 @@ public class CircleFromSimpleGeometricObjectType1 extends SimpleGeometricObjectT
 		return radius;
 	}
 	
-	public void setRadius(double radius) {
-		this.radius = radius;
+	public void setRadius(double radius) throws InvalidRadiusException{
+		if(radius>0)
+			this.radius = radius;
+		else throw new InvalidRadiusException(radius);
 	}
 	
 	public double getArea() {

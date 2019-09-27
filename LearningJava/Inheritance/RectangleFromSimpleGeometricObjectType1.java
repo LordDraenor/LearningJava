@@ -1,5 +1,7 @@
 package Inheritance;
 
+import exercises.InvalidRadiusException;
+
 public class RectangleFromSimpleGeometricObjectType1 extends SimpleGeometricObjectType1 {
 	private double width;
 	private double height;
@@ -47,7 +49,7 @@ public class RectangleFromSimpleGeometricObjectType1 extends SimpleGeometricObje
 
 class TestObjects {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InvalidRadiusException {
 
 		CircleFromSimpleGeometricObjectType1 circle = new CircleFromSimpleGeometricObjectType1(1);
 		System.out.println("A circle " + circle.toString());

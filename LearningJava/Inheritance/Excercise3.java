@@ -3,14 +3,16 @@ package Inheritance;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import exercises.InvalidRadiusException;
+
 public class Excercise3 {
-	public static void cry(String[] args) {
+	public static void cry(String[] args) throws InvalidRadiusException{
 		Object circle1 = new CircleFromSimpleGeometricObjectType1(1);
 		Object circle2 = new CircleFromSimpleGeometricObjectType1(1);
 		System.out.println(circle1.equals(circle2));
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InvalidRadiusException {
 		ArrayList<String> cityList = new ArrayList<>();
 		cityList.add("London");
 		cityList.add("Beijing");

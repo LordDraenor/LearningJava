@@ -1,12 +1,13 @@
 package Inheritance;
 
+import exercises.InvalidRadiusException;
 
 public class OriginalObjectClassLesson {
 
 	public OriginalObjectClassLesson() {		
 	}
 	
-	public static void main(String [] args) {
+	public static void main(String [] args) throws InvalidRadiusException{
 		OriginalObjectClassLesson obj = new OriginalObjectClassLesson();
 		System.out.println(obj);
 		displayObject(new CircleFromSimpleGeometricObjectType1(5, true, "green"));

@@ -1,4 +1,7 @@
 package Inheritance;
+
+import exercises.InvalidRadiusException;
+
 /**
  * 
  * @author Lucian
@@ -6,7 +9,7 @@ package Inheritance;
  */
 public class InstanceOfTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InvalidRadiusException{
 		SimpleGeometricObjectType1 obj1 = new CircleFromSimpleGeometricObjectType1(1);
 		SimpleGeometricObjectType1 obj2 = new RectangleFromSimpleGeometricObjectType1(1, 1);
 		
