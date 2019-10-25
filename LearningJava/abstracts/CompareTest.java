@@ -20,13 +20,15 @@ public class CompareTest {
 			}
 		}
 		
+		//Little note here - clone creates a new element (not only reference) 
 		Calendar calendar = new GregorianCalendar(2013, 2, 1);
 		Calendar calendar1 = calendar;
 		Calendar calendar2 = (Calendar)calendar.clone();
+		
 	}
 
 }
-
+//Instead of compareTo - which is a universal interface
 class Checked implements comparrison<Checked> {
 	int value;
 
@@ -41,7 +43,7 @@ class Checked implements comparrison<Checked> {
 	Checked(int i) {
 		setValue(i);
 	}
-
+   //@Override the compareTo method and set the type and procedure to what we need
 	public int compareTo(Checked bla){
 		int i;
 		if(this.value==bla.getValue())
@@ -52,7 +54,7 @@ class Checked implements comparrison<Checked> {
 	}
 
 }
-
+//This is pretty much the compareTo interface
 interface comparrison<E> {
 	public int compareTo(E o);
 }

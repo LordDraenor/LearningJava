@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>otherFIles/Voles</name>
+			<type>1</type>
+			<location>C:/Work/git/LearningJava/LearningJava/otherFIles/Voles-Thinkstock.jpg</location>
+		</link>
+	</linkedResources>
 </projectDescription>
