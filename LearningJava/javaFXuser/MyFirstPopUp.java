@@ -16,7 +16,6 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 public class MyFirstPopUp extends Application {
-
 	@Override
 	public void start(Stage primaryStage) throws InterruptedException  {
 		Button btOK = new Button("OK");
@@ -39,39 +38,46 @@ public class MyFirstPopUp extends Application {
 		btOK.setLayoutX(50);
 		btOK.setLayoutY(100);
 		btOK.setStyle("-fx-color:BLUE");
-		//This can be done also by changing the project source folder to something else and using
-		//InputStream input = ClassLoader.getSystemResourceAsStream("Voles");
-		//Image image = new Image(input);
+		
+		//This can be done also by using
+//		InputStream input = ClassLoader.getSystemResourceAsStream("Voles");
+//		Image image = new Image(input);
+//		input.close(); - at the end		
+		
+		Image image = new Image("Voles");		
 		//Or just reference the path directly
-		Image image = new Image("Voles");			
 		ImageView imageView = new ImageView(image);
 		pane.getChildren().add(imageView);
 		pane.getChildren().add(btOK);	
-		pane.getChildren().add(circle);
-		
-		
-		
-		//pane.getChildren().add(pane2);
+		pane.getChildren().add(circle);		
 		Scene scene = new Scene(pane,400,600);
 		primaryStage.setTitle("This is soooooo outdated");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		//Now this is some advanced shit right here for just waiting 10 seconds and then closing the app
-		//The runnable thing can be replaced with a Lambda - I just don't know how :D
+		//The runnable thing can be replaced with a Lambda - I just don't know how :D. EDIT: NVM figured it out - implement runnable and reference the method. EASY @.@
 		final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
-		executor.scheduleWithFixedDelay(new Runnable() {
-	        @Override
-	        public void run() {
-	            randomTask();
-	        }
-	    } ,10,1,TimeUnit.SECONDS);
+		//below is the non-lambda implementation - much easier to understand
+//		executor.scheduleWithFixedDelay(new Runnable() {
+//	        @Override
+//	        public void run() {
+//	            randomTask();
+//	        }
+//	    } ,10,1,TimeUnit.SECONDS);
+		executor.scheduleWithFixedDelay(exiterClass::randomTask,10,1,TimeUnit.SECONDS);
+		
 		
 	}
 	//Main not actually needed if your IDE or application has javafx support
 	public static void main(String[] args) {
 		Application.launch(args);
-	}
-	private static void randomTask(){
-		System.exit(0);
-	}
+	}	
 } 
+class exiterClass implements Runnable{	
+	static void randomTask(){		
+		System.exit(0);	
+	}
+	@Override
+	public void run() {		
+	}
+}
