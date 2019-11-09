@@ -14,10 +14,11 @@ public class HandleEventBasic extends Application {
 	@Override // Override the start method in the Application class
 	public void start(Stage primaryStage) {
 		// Create a pane and set its properties
-		HBox pane = new HBox(10);
+		HBox pane = new HBox(100);
 		pane.setAlignment(Pos.CENTER);
 		Button btOK = new Button("OK");
 		Button btCancel = new Button("Cancel");
+		//Set new handlers for our 2 events - these are instances of our custom EventHandler methods implemented below
 		OKHandlerClass handler1 = new OKHandlerClass();
 		btOK.setOnAction(handler1);
 		CancelHandlerClass handler2 = new CancelHandlerClass();
@@ -31,7 +32,7 @@ public class HandleEventBasic extends Application {
 		primaryStage.show(); // Display the stage
 	}
 }
-
+//Handler classes need to implement the EventHandler
 class OKHandlerClass implements EventHandler<ActionEvent> {
 
 	@Override

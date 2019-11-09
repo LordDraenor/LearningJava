@@ -16,7 +16,7 @@ public class GetCalendar {
 			System.out.println("Input month (eg. 11) or 0 to end:");
 			month = input.nextInt();
 		}    	
- 
+    	input.close();
     	
     }
     
