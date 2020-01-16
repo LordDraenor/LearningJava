@@ -1,11 +1,6 @@
 package events;
 
 import javafx.application.Application;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,7 +13,6 @@ public class MetersToFeetAndInches extends Application {
 	private TextField tfCentimeters = new TextField();
 	private TextField tfFeet = new TextField();
 	private TextField tfInches = new TextField();
-	private Button btCalculate = new Button("Calculate");
 
 	@Override // Override the start method in the Application class
 	public void start(Stage primaryStage) {
